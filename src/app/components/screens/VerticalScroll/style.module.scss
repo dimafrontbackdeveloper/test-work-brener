@@ -1,6 +1,14 @@
 .scrollContainer {
-	height: 400px;
+	height: 700px;
 	max-width: 300px;
 	overflow-y: auto;
 	background-color: aqua;
+
+	@media (max-height: 813px) {
+		height: 500px;
+	}
+
+	@media (max-height: 600px) {
+		height: 300px;
+	}
 }
