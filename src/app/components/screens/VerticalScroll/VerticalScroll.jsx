@@ -15,7 +15,7 @@ const VerticalScroll = () => {
 		isLoading,
 		error,
 		refetch
-	} = useQuery('imageBlocks', async () => {
+	} = useQuery('posts', async () => {
 		const postsData = await postsService.getPosts(page)
 		return postsData.data
 	})
@@ -58,7 +58,7 @@ const VerticalScroll = () => {
 	}
 
 	return (
-		<div className={styles.container}>
+		<div>
 			<div className={styles.scrollContainer} ref={scrollContainerRef}>
 				{posts &&
 					posts.map(post => {
