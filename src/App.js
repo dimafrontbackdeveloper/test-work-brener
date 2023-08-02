@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from 'react-router-dom'
+import Header from './app/components/ui/Header/Header'
+import './global.css'
+import './nulling.css'
+import HomePage from './pages/Home'
+import RectanglesPage from './pages/Rectangles'
+import VerticalScrollPage from './pages/VerticalScroll'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div>
+			<Header />
+			<div className="main">
+				<Routes>
+					<Route path="/" element={<HomePage />} />
+					<Route path="/vertical-scroll" element={<VerticalScrollPage />} />
+					<Route path="/rectangles" element={<RectanglesPage />} />
+				</Routes>
+			</div>
+		</div>
+	)
 }
 
-export default App;
+export default App
